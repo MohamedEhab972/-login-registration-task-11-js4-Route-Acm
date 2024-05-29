@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/task11.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section
+      id="smLogin"
+      class="text-center d-flex justify-content-start align-items-center"
+    >
+      <div class="container p-3 rounded-2 w-50 my-3">
+        <h2>Smart Login System</h2>
+        <input
+          type="text"
+          class="form-control mt-3 p-3 mt-1"
+          id="yName"
+          placeholder="Enter Your Name"
+        />
+        <div class="alert alert-danger d-none py-2 mt-2 text-center w-100">
+          You can write 4 names, each name consisting of (1-7) letters
+        </div>
+        <input
+          type="email"
+          class="form-control mt-3 p-3 mt-1"
+          id="email"
+          placeholder="Enter Your Email"
+        />
+        <div class="alert alert-danger d-none py-2 mt-2 text-center w-100">
+          write a valid Email
+        </div>
+        <input
+          type="password"
+          class="form-control mt-3 p-3 mt-1"
+          id="password"
+          placeholder="Enter Your password"
+        />
+        <div class="alert alert-danger d-none py-2 mt-2 text-center w-100">
+          Minimum eight characters, at least one uppercase letter, one lowercase
+          letter, one number and one special character
+        </div>
+        <div id="Alert" class="alert alert-danger d-none my-2">
+          The email or password is already exist
+        </div>
+        <div id="spAlert" class="alert alert-dark my-2 d-none">Success</div>
+        <div id="spAlert2" class="alert alert-danger my-2 d-none">
+          One or all of the inputs are wrong
+        </div>
+        <div class="d-grid gap-2 my-2 w-100">
+          <button id="signupBotton" class="btn btn-spichial my-2" type="button">
+            sign up
+          </button>
+          <button
+            id="LoginBotton"
+            class="btn btn-spichial my-2 d-none"
+            type="button"
+          >
+            Login
+          </button>
+        </div>
+        <p>
+          You have an account?<a
+            href="file:///C:/Users/moham/OneDrive/%D8%B3%D8%B7%D8%AD%20%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8/task-11-js4/login.html"
+            class="text-white"
+          >
+            Signin</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

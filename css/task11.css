@@ -1,0 +1,54 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+}
+section {
+  min-height: 100vh;
+  background-image: url(../image/—Pngtree—neon\ frame\ with\ tropical\ leaves_1225104.jpg);
+  background-position: center;
+  background-size: cover;
+}
+#col {
+  height: 100vh;
+}
+section .container {
+  color: white;
+  box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+  background-image: linear-gradient(#4ad5f798, hwb(295 9% 18% / 0.519));
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+input {
+  background-color: rgba(255, 255, 255, 0.285) !important;
+}
+::placeholder {
+  color: rgb(255, 255, 255) !important;
+}
+.btn-spichial {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #4ad3f7;
+  --bs-btn-border-color: #4ad3f7;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: #390357;
+  --bs-btn-hover-border-color: #390357;
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: #fff;
+  --bs-btn-active-bg: #390357;
+  --bs-btn-active-border-color: #390357;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #fff;
+  --bs-btn-disabled-bg: #4ad3f7;
+  --bs-btn-disabled-border-color: #4ad3f7;
+}
+#spAlert {
+  color: green;
+  font-weight: 700;
+}

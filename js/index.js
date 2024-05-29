@@ -83,8 +83,7 @@ function signUp(par) {
         }
       }
       if (bole) {
-        window.location =
-          "file:///C:/Users/moham/OneDrive/%D8%B3%D8%B7%D8%AD%20%D8%A7%D9%84%D9%85%D9%83%D8%AA%D8%A8/task-11-js4/home.html";
+        window.location = "home.html";
       } else {
         spAlert3.classList.remove("d-none");
       }

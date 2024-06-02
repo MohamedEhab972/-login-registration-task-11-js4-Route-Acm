@@ -9,44 +9,43 @@ var loginBotton = document.getElementById("LoginBotton");
 var spAlert3 = document.getElementById("spAlert3");
 var logout = document.getElementById("logout");
 var myId = document.getElementById("myId");
-var array = [];
+var array;
 if (localStorage.getItem("key") == null) {
-  array = [
-    (newRigester = {
-      rName: "hello",
-      rEmail: "hello",
-      rPassword: "hello",
-    }),
-  ];
-  localStorage.setItem("key", JSON.stringify(array));
+  array = [];
 } else {
   array = JSON.parse(localStorage.getItem("key"));
 }
 
 // add a new regester
-function signUp(par) {
-  var bol;
-  var check = JSON.parse(localStorage.getItem("key"));
-  var y = email.value.toLocaleLowerCase();
-  for (var i = 0; i < check.length; i++) {
-    var x = check[i].rEmail.toLocaleLowerCase();
-    if (y == x || password.value == check[i].rPassword) {
-      bol = false;
-      break;
-    } else if (y == x && password.value == check[i].rPassword) {
-      bol = false;
-      break;
+function signUp() {
+  if (
+    yName.classList.contains("is-valid") &&
+    email.classList.contains("is-valid") &&
+    password.classList.contains("is-valid")
+  ) {
+    if (localStorage.getItem("key") == null) {
+      var newRigester = {
+        rName: yName.value,
+        rEmail: email.value,
+        rPassword: password.value,
+      };
+      array.push(newRigester);
+      localStorage.setItem("key", JSON.stringify(array));
+      clear();
+      spAlert.classList.remove("d-none");
     } else {
-      bol = true;
-    }
-  }
-  if (par == "signupBotton") {
-    if (
-      yName.classList.contains("is-valid") &&
-      email.classList.contains("is-valid") &&
-      password.classList.contains("is-valid")
-    ) {
-      console.log(par);
+      var bol;
+      var check = JSON.parse(localStorage.getItem("key"));
+      var y = email.value.toLocaleLowerCase();
+      for (var i = 0; i < check.length; i++) {
+        var x = check[i].rEmail.toLocaleLowerCase();
+        if (y == x || password.value == check[i].rPassword) {
+          bol = false;
+          break;
+        } else {
+          bol = true;
+        }
+      }
       if (bol) {
         var newRigester = {
           rName: yName.value,
@@ -61,14 +60,20 @@ function signUp(par) {
         Alert.classList.remove("d-none");
         clear();
       }
-    } else {
-      spAlert2.classList.remove("d-none");
     }
-  } else if (par == "LoginBotton") {
-    if (
-      email.classList.contains("is-valid") &&
-      password.classList.contains("is-valid")
-    ) {
+  } else {
+    spAlert2.classList.remove("d-none");
+  }
+}
+function login() {
+  if (
+    email.classList.contains("is-valid") &&
+    password.classList.contains("is-valid")
+  ) {
+    if (localStorage.getItem("key") == null) {
+      alert("in-valide inputs");
+    } else {
+      var check = JSON.parse(localStorage.getItem("key"));
       var bole;
       var y = email.value.toLocaleLowerCase();
       for (var i = 0; i < check.length; i++) {
@@ -87,11 +92,12 @@ function signUp(par) {
       } else {
         spAlert3.classList.remove("d-none");
       }
-    } else {
-      spAlert2.classList.remove("d-none");
     }
+  } else {
+    spAlert2.classList.remove("d-none");
   }
 }
+
 var myNamex = localStorage.getItem("key1");
 if (myId == null) {
 } else {
@@ -101,13 +107,13 @@ if (myId == null) {
 if (signupBotton == null) {
 } else {
   signupBotton.addEventListener("click", function (e) {
-    signUp(e.target.id);
+    signUp();
   });
 }
 if (loginBotton == null) {
 } else {
   loginBotton.addEventListener("click", function (e) {
-    signUp(e.target.id);
+    login();
   });
 }
 // end of add a new regester

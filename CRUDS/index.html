@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/js-pro.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <section id="project" class="my-5 w-75 mx-auto">
+      <div class="container">
+        <div class="form-floating mb-3">
+          <input
+            oninput=" valedate(this)"
+            type="text"
+            class="form-control"
+            id="productName"
+            placeholder="Name"
+          />
+          <label for="productName">Product name</label>
+        </div>
+        <div class="alert alert-danger d-none">
+          The first caracter must be capital and you can add between 2 to 8
+          caracters
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            oninput=" valedate(this)"
+            type="number"
+            class="form-control"
+            id="productPrice"
+            placeholder="Price"
+          />
+          <label for="productPrice">Product price</label>
+        </div>
+        <div class="alert alert-danger d-none">
+          you can write between 9 to 9999
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            oninput=" valedate(this)"
+            list="demo"
+            type="text"
+            class="form-control"
+            id="category"
+            placeholder="category"
+          />
+          <label for="category">Product category</label>
+          <datalist id="demo">
+            <option value="Tv"></option>
+            <option value="Screen"></option>
+            <option value="Mobile"></option>
+            <option value="Labtop"></option>
+          </datalist>
+        </div>
+        <div class="alert alert-danger d-none">
+          you can chose between tv , mobil , screen and labtop
+        </div>
+        <div class="form-floating mb-3">
+          <textarea
+            oninput=" valedate(this)"
+            class="form-control"
+            id="productDescription"
+            placeholder="description"
+          ></textarea>
+          <label for="productDescription">Product description</label>
+        </div>
+        <div class="alert alert-danger d-none">
+          you can write between 2 to 10 characters
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            type="file"
+            class="form-control"
+            id="image"
+            placeholder="Price"
+          />
+          <label for="image">Upload image</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input
+            oninput="search()"
+            type="text"
+            class="form-control w-50"
+            id="search"
+            placeholder="Price"
+          />
+          <label for="search">Search</label>
+        </div>
+        <button
+          id="addProductbotton"
+          class="btn btn-info text-white"
+          onclick="addProduct()"
+        >
+          Add product
+        </button>
+        <button
+          id="updatebotton"
+          onclick="edit(ptr)"
+          class="btn btn-warning d-none text-white"
+        >
+          update product
+        </button>
+      </div>
+    </section>
+
+    <section class="mt-2">
+      <div class="container">
+        <div class="row" id="display"></div>
+      </div>
+    </section>
+   
+    <!-- <button id class="btn btn-warning">click</button>
+    <button class="btn btn-warning">click</button>
+    <button class="btn btn-warning">click</button>
+    <button class="btn btn-warning">click</button>
+<h2>mohamed</h2>
+<h2>mohamed</h2>
+<h2>mohamed</h2>
+<h2>mohamed</h2> -->
+
+    <!-- <header class="w-75 mx-auto">
+      <img id="firstImg" src="spimage/work-3.jpg" class="w-100" alt="" />
+      <div class="d-flex justify-content-between w-100 my-2">
+        <img src="spimage/work-4.jpg" class="w-25" alt="" />
+        <img src="spimage/work-5.jpg" class="w-25" alt="" />
+        <img src="spimage/work-6.jpg" class="w-25" alt="" />
+      </div>
+    </header> -->
+<!--   
+    <section>
+      <div class="row m-5 g-3">
+        <div class="col-lg-4">
+          <div class="image">
+            <img src="spimage/images.png" alt="" />
+            <div class="info text-center">
+              <h3>Lorem ipsum</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa,
+                tempore!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="image">
+            <img src="spimage/work-4.jpg" alt="" />
+            <div class="info text-center">
+              <h3>Lorem ipsum</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa,
+                tempore!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="image">
+            <img src="spimage/work-5.jpg" alt="" />
+            <div class="info text-center">
+              <h3>Lorem ipsum</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa,
+                tempore!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="image">
+            <img src="spimage/work-3.jpg" alt="" />
+            <div class="info text-center">
+              <h3>Lorem ipsum</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa,
+                tempore!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="image">
+            <img src="spimage/work-4.jpg" alt="" />
+            <div class="info text-center">
+              <h3>Lorem ipsum</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa,
+                tempore!
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="image">
+            <img src="spimage/work-5.jpg" alt="" />
+            <div class="info text-center">
+              <h3>Lorem ipsum</h3>
+              <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa,
+                tempore!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="layer" class="layer d-none">
+      <div
+        id="bgImge"
+        class="d-flex justify-content-between align-items-center position-relative"
+      >
+        <i id="before" class="fas fa-arrow-alt-circle-left fa-lg m-3"></i>
+        <i
+          id="close"
+          class="spIcon far fa-times-circle m-3 fa-lg position-absolute"
+        ></i>
+        <i id="after" class="fas fa-arrow-alt-circle-right fa-lg m-3"></i>
+      </div>
+    </div>  -->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
